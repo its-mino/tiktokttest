@@ -1,5 +1,6 @@
 from TikTokApi import TikTokApi
 import datetime
+import time
 
 api = TikTokApi()
 
@@ -25,6 +26,7 @@ for author in authors:
     total_shares = 0
     now = datetime.datetime.now()
     then = now - datetime.timedelta(days=days_back)
+    then = time.mktime(then.timetuple())
     videos = author.videos(cursor=then)
     for video in videos:
       try:
