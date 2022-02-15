@@ -30,6 +30,7 @@ for author in authors:
     videos = author.videos(cursor=then)
     list_videos = list(videos)
     number_of_videos = len(list_videos)
+    added_vids = 0
     if number_of_videos > 0:
       for video in list_videos:
         try:
@@ -37,12 +38,13 @@ for author in authors:
           total_diggs += video.info()['stats']['diggCount']
           total_comments += video.info()['stats']['commentCount']
           total_shares += video.info()['stats']['shareCount']
+          added_vids += 1
         except:
           pass
 
-      avg_views = total_views/number_of_videos
-      avg_diggs = total_diggs/number_of_videos
-      avg_comments = total_comments/number_of_videos
-      avg_shares = total_shares/number_of_videos
+      avg_views = total_views/added_vids
+      avg_diggs = total_diggs/added_vids
+      avg_comments = total_comments/added_vids
+      avg_shares = total_shares/added_vids
 
       print(author.username, data['stats']['followerCount'], 'followers', avg_views, 'avg views', avg_diggs, 'avg likes', avg_comments, 'avg comments', avg_shares, 'avg shares')
