@@ -28,7 +28,7 @@ for author in authors:
     then = now - datetime.timedelta(days=days_back)
     then = time.mktime(then.timetuple())
     videos = author.videos(cursor=then)
-    num_videos = len(list(videos))
+    number_of_videos = len(list(videos))
     print(num_videos)
     if num_videos > 0:
       for video in videos:
@@ -40,9 +40,9 @@ for author in authors:
         except:
           pass
 
-      avg_views = total_views/num_videos
-      avg_diggs = total_diggs/num_videos
-      avg_comments = total_comments/num_videos
-      avg_shares = total_shares/num_videos
+      avg_views = total_views/number_of_videos
+      avg_diggs = total_diggs/number_of_videos
+      avg_comments = total_comments/number_of_videos
+      avg_shares = total_shares/number_of_videos
 
-      print(data['user']['nickname'], data['stats']['followerCount']+' followers', str(avg_views)+' avg views', str(avg_diggs)+' avg likes', str(avg_comments)+' avg comments', str(avg_shares)+' avg shares')
+      print(data['user']['nickname'], data['stats']['followerCount']+' followers', str(avg_views)+=' avg views', str(avg_diggs)+=' avg likes', str(avg_comments)+=' avg comments', str(avg_shares)+=' avg shares')
