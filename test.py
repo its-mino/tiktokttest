@@ -29,10 +29,8 @@ for author in authors:
     then = time.mktime(then.timetuple())
     videos = author.videos(cursor=then)
     number_of_videos = len(list(videos))
-    print(author)
-    print(number_of_videos)
     if number_of_videos > 0:
-      print(videos)
+      print(list(videos))
       for video in videos:
         print(video.info())
         total_views += video.info()['stats']['playCount']
@@ -45,4 +43,4 @@ for author in authors:
       avg_comments = total_comments/number_of_videos
       avg_shares = total_shares/number_of_videos
 
-      print(data['user']['nickname'], data['stats']['followerCount'], 'followers', avg_views, 'avg views', avg_diggs, 'avg likes', avg_comments, 'avg comments', avg_shares, 'avg shares')
+      print(author.username, data['stats']['followerCount'], 'followers', avg_views, 'avg views', avg_diggs, 'avg likes', avg_comments, 'avg comments', avg_shares, 'avg shares')
