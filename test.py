@@ -45,4 +45,4 @@ for author in authors:
       avg_comments = total_comments/number_of_videos
       avg_shares = total_shares/number_of_videos
 
-      print(data['user']['nickname'], data['stats']['followerCount']+' followers', str(avg_views)+=' avg views', str(avg_diggs)+=' avg likes', str(avg_comments)+=' avg comments', str(avg_shares)+=' avg shares')
+      print(data['user']['nickname'], data['stats']['followerCount'], 'followers', avg_views, 'avg views', avg_diggs, 'avg likes', avg_comments, 'avg comments', avg_shares, 'avg shares')
