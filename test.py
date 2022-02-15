@@ -28,18 +28,19 @@ for author in authors:
     then = now - datetime.timedelta(days=days_back)
     then = time.mktime(then.timetuple())
     videos = author.videos(cursor=then)
-    for video in videos:
-      try:
-        total_views += video.info()['stats']['playCount']
-        total_diggs += video.info()['stats']['diggCount']
-        total_comments += video.info()['stats']['commentCount']
-        total_shares += video.info()['stats']['shareCount']
-      except:
-        pass
-        
-    avg_views = total_views/len(list(videos))
-    avg_diggs = total_diggs/len(list(videos))
-    avg_comments = total_comments/len(list(videos))
-    avg_shares = total_shares/len(list(videos))
-        
-    print(data['user']['nickname'], data['stats']['followerCount']+' followers', avg_views+' avg views', avg_diggs+' avg likes', avg_comments+' avg comments', avg_shares+' avg shares')
+    if len(videos) > 0
+      for video in videos:
+        try:
+          total_views += video.info()['stats']['playCount']
+          total_diggs += video.info()['stats']['diggCount']
+          total_comments += video.info()['stats']['commentCount']
+          total_shares += video.info()['stats']['shareCount']
+        except:
+          pass
+
+      avg_views = total_views/len(list(videos))
+      avg_diggs = total_diggs/len(list(videos))
+      avg_comments = total_comments/len(list(videos))
+      avg_shares = total_shares/len(list(videos))
+
+      print(data['user']['nickname'], data['stats']['followerCount']+' followers', str(avg_views)+' avg views', str(avg_diggs)+' avg likes', str(avg_comments)+' avg comments', str(avg_shares)+' avg shares')
