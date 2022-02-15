@@ -31,13 +31,14 @@ for author in authors:
     list_videos = list(videos)
     number_of_videos = len(list_videos)
     if number_of_videos > 0:
-      print(list_videos)
       for video in list_videos:
-        print(video.info())
-        total_views += video.info()['stats']['playCount']
-        total_diggs += video.info()['stats']['diggCount']
-        total_comments += video.info()['stats']['commentCount']
-        total_shares += video.info()['stats']['shareCount']
+        try:
+          total_views += video.info()['stats']['playCount']
+          total_diggs += video.info()['stats']['diggCount']
+          total_comments += video.info()['stats']['commentCount']
+          total_shares += video.info()['stats']['shareCount']
+        except:
+          pass
 
       avg_views = total_views/number_of_videos
       avg_diggs = total_diggs/number_of_videos
