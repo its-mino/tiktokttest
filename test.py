@@ -8,7 +8,7 @@ api = TikTokApi()
 #hashtag to search
 search_term = "femalegamer"
 #how many videos to search in hashtag
-num_videos = 100
+num_videos = 500
 #number of days to average user content metrics
 days_back = 7
 
@@ -20,10 +20,7 @@ for video in hashtag.videos(count=num_videos):
 completed_authors = []
 authors = list(authors)
 for author in authors:
-  print(author.username)
-for author in authors:
   if author.username not in completed_authors:
-    print(author.username)
     data = author.info_full()
     if data['stats']['followerCount'] >= 250000 and data['stats']['followerCount'] < 1500000:
       total_views = 0
