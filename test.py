@@ -28,10 +28,11 @@ for author in authors:
     then = now - datetime.timedelta(days=days_back)
     then = time.mktime(then.timetuple())
     videos = author.videos(cursor=then)
-    number_of_videos = len(list(videos))
+    list_videos = list(videos)
+    number_of_videos = len(list_videos)
     if number_of_videos > 0:
-      print(list(videos))
-      for video in videos:
+      print(list_videos)
+      for video in list_videos:
         print(video.info())
         total_views += video.info()['stats']['playCount']
         total_diggs += video.info()['stats']['diggCount']
