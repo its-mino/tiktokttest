@@ -2,4 +2,5 @@ from TikTokApi import TikTokApi
 api = TikTokApi()
 search_term = "funny"
 hashtag = api.hashtag(name=search_term)
-print(hashtag.videos())
+for video in hashtag.videos():
+  print(video)
