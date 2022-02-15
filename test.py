@@ -29,7 +29,10 @@ for author in authors:
     then = time.mktime(then.timetuple())
     videos = author.videos(cursor=then)
     number_of_videos = len(list(videos))
+    print(author)
+    print(number_of_videos)
     if number_of_videos > 0:
+      print(videos)
       for video in videos:
         print(video.info())
         total_views += video.info()['stats']['playCount']
