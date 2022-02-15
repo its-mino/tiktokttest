@@ -8,7 +8,7 @@ api = TikTokApi()
 #hashtag to search
 search_term = "funny"
 #how many videos to search in hashtag
-num_videos = 30
+num_videos = 1
 #number of days to average user content metrics
 days_back = 5
 
@@ -31,6 +31,7 @@ for author in authors:
     number_of_videos = len(list(videos))
     if number_of_videos > 0:
       for video in videos:
+        print(video.info())
         total_views += video.info()['stats']['playCount']
         total_diggs += video.info()['stats']['diggCount']
         total_comments += video.info()['stats']['commentCount']
