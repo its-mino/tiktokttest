@@ -6,7 +6,7 @@ api = TikTokApi()
 
 #Settings
 #hashtag to search
-search_term = "gamergirl"
+search_term = "girlgamer"
 #how many videos to search in hashtag
 num_videos = 500
 #number of days to average user content metrics
