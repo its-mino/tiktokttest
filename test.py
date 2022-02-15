@@ -10,7 +10,7 @@ search_term = "funny"
 #how many videos to search in hashtag
 num_videos = 30
 #number of days to average user content metrics
-days_back = 2
+days_back = 5
 
 hashtag = api.hashtag(name=search_term)
 authors = []
@@ -29,16 +29,12 @@ for author in authors:
     then = time.mktime(then.timetuple())
     videos = author.videos(cursor=then)
     number_of_videos = len(list(videos))
-    print(number_of_videos)
     if number_of_videos > 0:
       for video in videos:
-        try:
-          total_views += video.info()['stats']['playCount']
-          total_diggs += video.info()['stats']['diggCount']
-          total_comments += video.info()['stats']['commentCount']
-          total_shares += video.info()['stats']['shareCount']
-        except:
-          pass
+        total_views += video.info()['stats']['playCount']
+        total_diggs += video.info()['stats']['diggCount']
+        total_comments += video.info()['stats']['commentCount']
+        total_shares += video.info()['stats']['shareCount']
 
       avg_views = total_views/number_of_videos
       avg_diggs = total_diggs/number_of_videos
