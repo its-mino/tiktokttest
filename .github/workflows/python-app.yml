@@ -25,6 +25,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install TikTokApi
         playwright install
+        sudo playwright install-deps    
     - name: test
       run: |
         python test.py
