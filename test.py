@@ -8,7 +8,7 @@ api = TikTokApi()
 #hashtag to search
 search_term = "funny"
 #how many videos to search in hashtag
-num_videos = 1
+num_videos = 30
 #number of days to average user content metrics
 days_back = 5
 
