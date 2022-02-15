@@ -17,6 +17,6 @@ for author in authors:
     total_views = 0
     for video in author.videos():
       print(video.info())
-      total_views += video.info()['data']['views']
+      total_views += video.info()['stats']['playCount']
       avg_views = total_views/10
     print(data['user']['nickname'], data['stats']['followerCount'], avg_views)
