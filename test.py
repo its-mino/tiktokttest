@@ -28,7 +28,7 @@ for author in authors:
     then = now - datetime.timedelta(days=days_back)
     then = time.mktime(then.timetuple())
     videos = author.videos(cursor=then)
-    if len(videos) > 0
+    if len(videos) > 0:
       for video in videos:
         try:
           total_views += video.info()['stats']['playCount']
