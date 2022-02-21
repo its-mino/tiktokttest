@@ -2,7 +2,7 @@ from TikTokApi import TikTokApi
 import datetime
 import time
 
-api = TikTokApi(use_api_endpoints=True)
+api = TikTokApi()
 
 #Settings
 #hashtag to search
